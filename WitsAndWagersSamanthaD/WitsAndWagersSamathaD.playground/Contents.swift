@@ -1,7 +1,7 @@
 
-var greeting = "Lets play Wits and Wagers!"
+let greeting = "Lets play Wits and Wagers!"
 let newline = ""
-var rules = """
+let rules = """
 The rules are simple!
 First, make a guess of what you think is the right answer (or as close to the right answer as you can get).
 Then, you get 1 bet for each question and you can bet on any guess!
