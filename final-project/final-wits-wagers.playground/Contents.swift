@@ -1,5 +1,6 @@
 import Cocoa
 import Darwin
+import Foundation
 
 
 let greeting = "Lets play Wits and Wagers!"
@@ -518,36 +519,19 @@ class GameBets: GameInfo, GameRules{
     
     func winner(){
         let totals = [total1, total2, total3, total4, total5]
-        
-        for _ in totals {
-            let num = totals.max()
-            let indexOfWinner = totals.firstIndex(of: num ?? 0)
-            let currentIndex1 = 0
-            let currentIndex2 = 1
-            let currentIndex3 = 2
-            let currentIndex4 = 3
-            let currentIndex5 = 4
-            print("And the winner is...")
-            if indexOfWinner == currentIndex1{
-                print("\(play1Name) with a score of \(total1) points!")
-            }
-            if indexOfWinner == currentIndex2{
-                print("\(play2Name) with a score of \(total2) points!")
-            }
-            if indexOfWinner == currentIndex3{
-                print("\(play3Name) with a score of \(total3) points!")
-            }
-            if indexOfWinner == currentIndex4{
-                print("\(play4Name) with a score of \(total4) points!")
-            }
-            if indexOfWinner == currentIndex5{
-                print("\(play5Name) with a score of \(total5) points!")
+        let names = [play1Name:total1, play2Name:total2, play3Name:total3, play4Name:total4, play5Name:total5]
+        print("And the winner is...")
+        for (name,total) in names{
+            //var winnersDict: [String:Int] = [:]
+            let num = totals.max()!
+            if (total == num){
+                //winnersDict = [name:total]
+                print("\(name) with \(total) points!")
             }
         }
-        
     }
-    
-    }
+}
+            
 
 
 
@@ -556,29 +540,30 @@ print(newline)
 print(rules)
 print(newline)
 var gamePlay = GameBets()
-print(gamePlay.round1())
-print(gamePlay.scores())
-print(gamePlay.round2())
-print(gamePlay.scores())
-print(gamePlay.round3())
-print(gamePlay.scores())
-print(gamePlay.round4())
-print(gamePlay.scores())
-print(gamePlay.round5())
-print(gamePlay.scores())
-print(gamePlay.round6())
-print(gamePlay.scores())
-print(gamePlay.round7())
-print(gamePlay.scores())
-print(gamePlay.round8())
-print(gamePlay.scores())
-print(gamePlay.round9())
-print(gamePlay.scores())
-print(gamePlay.round10())
-print(gamePlay.scores())
+RETURN; gamePlay.round1()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round2()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round3()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round4()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round5()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round6()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round7()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round8()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round9()
+RETURN; gamePlay.scores()
+RETURN; gamePlay.round10()
+RETURN; gamePlay.scores()
 print(newline)
-print(gamePlay.winner())
+RETURN; gamePlay.winner()
 print(newline)
+
 print("Thanks for playing Wits & Wagers!")
 
 
