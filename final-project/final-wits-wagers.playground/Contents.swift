@@ -269,7 +269,7 @@ class GameBets: GameInfo, GameRules{
             total1 += 1
             total2 += 0
             total3 += 0
-            total4 += 1
+            total4 += 0
             total5 += 2
         }
         func round2() {
@@ -319,7 +319,7 @@ class GameBets: GameInfo, GameRules{
             print(newline)
             print("\(play1Name) wrote the winning bet! You win $1!")
             total1 += 1
-            total2 += 2
+            total2 += 1
             total3 += 0
             total4 += 0
             total5 += 0
@@ -362,7 +362,7 @@ class GameBets: GameInfo, GameRules{
             print("Place your bets!")
             print(newline)
             print("\(play1Name) bet on \(play1Name)")
-            print("\(play2Name) bet on \(play2Name)")
+            print("\(play2Name) bet on \(play1Name)")
             print("\(play3Name) bet on \(play3Name)")
             print("\(play4Name) bet on \(play4Name)")
             print("\(play5Name) bet on \(play5Name)")
@@ -391,7 +391,7 @@ class GameBets: GameInfo, GameRules{
             print("\(play2Name) bet on \(play3Name)")
             print("\(play3Name) bet on \(play3Name)")
             print("\(play4Name) bet on \(play1Name)")
-            print("\(play5Name) bet on \(play3Name)")
+            print("\(play5Name) bet on \(play4Name)")
             print(newline)
             print("The correct answer is \(answer6), \(play2Name), \(play3Name) and \(play5Name) bet on the winning guess, \(answer6)! You won $1!")
             print(newline)
@@ -520,16 +520,21 @@ class GameBets: GameInfo, GameRules{
     func winner(){
         let totals = [total1, total2, total3, total4, total5]
         let names = [play1Name:total1, play2Name:total2, play3Name:total3, play4Name:total4, play5Name:total5]
+        var winnersList: [String] = [ ]
         print("And the winner is...")
         for (name,total) in names{
-            //var winnersDict: [String:Int] = [:]
             let num = totals.max()!
             if (total == num){
-                //winnersDict = [name:total]
+                winnersList.append(name)
+                winnersList.append(name)
                 print("\(name) with \(total) points!")
-            }
         }
     }
+        let tie = winnersList.count
+        if tie >= 2 {
+            print("There was a tie!")
+        }
+}
 }
             
 
